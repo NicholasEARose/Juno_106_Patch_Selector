@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript" src="main.js"></script>
+
+  <title>Juno-106 Patch Search</title>
+</head>
+
+<body>
+  <main>
+    <section class="top_section">
+      <div class="hero_container">
+        <h1>
+          <span>J</span>
+          <span>U</span>
+          <span>N</span>
+          <span>O</span>
+          <span>1</span>
+          <span>0</span>
+          <span>6</span>
+        </h1>
+        <h2>
+          <span>P</span>
+          <span>A</span>
+          <span>T</span>
+          <span>C</span>
+          <span>H</span>
+          <span>S</span>
+          <span>E</span>
+          <span>L</span>
+          <span>E</span>
+          <span>C</span>
+          <span>T</span>
+          <span>O</span>
+          <span>R</span>
+        </h2>
+      </div>
+      <input type="text" id="search_input" onkeyup="sortPatches()" placeholder="Let's Make Some Noise...">
+    </section>
+    <table id="patchTable">
+      <tr class="header_table">
+        <th>Patch Number</th>
+        <th>Preset Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>a11</td>
+        <td>Brass</td>
+        <td>Analog Brass</td>
+      </tr>
+      <tr>
+        <td>a12</td>
+        <td>Brass Swell</td>
+        <td>Muted Brass Swell</td>
+      </tr>
+      <tr>
+        <td>a13</td>
+        <td>Trumpet</td>
+        <td>Trumpet</td>
+      </tr>
+      <tr>
+        <td>a14</td>
+        <td>Flutes</td>
+        <td>Flutes</td>
+      </tr>
+      <tr>
+        <td>a15</td>
+        <td>Moving Strings</td>
+        <td>String Pad</td>
+      </tr>
+      <tr>
+        <td>a16</td>
+        <td>Brass & Strings</td>
+        <td>Brass, Strings, Chorus</td>
+      </tr>
+      <tr>
+        <td>a17</td>
+        <td>Choir</td>
+        <td>Haunitng Choir</td>
+      </tr>
+      <tr>
+        <td>a18</td>
+        <td>Piano I</td>
+        <td>Synth Piano</td>
+      </tr>
+      <tr>
+        <td>a21</td>
+        <td>Organ I</td>
+        <td>Lil' Leslie</td>
+      </tr>
+      <tr>
+        <td>a22</td>
+        <td>Organ II</td>
+        <td>Trebly w/Chorus</td>
+      </tr>
+      <tr>
+        <td>a23</td>
+        <td>Combo Organ</td>
+        <td>House Of The Rising Sun</td>
+      </tr>
+      <tr>
+        <td>a24</td>
+        <td>Calliope</td>
+        <td>Circus Music</td>
+      </tr>
+      <tr>
+        <td>a25</td>
+        <td>Donald Pluck</td>
+        <td>Mod Res for DD</td>
+      </tr>
+      <tr>
+        <td>a26</td>
+        <td>Celeste</td>
+        <td>Beautiful Haunting</td>
+      </tr>
+      <tr>
+        <td>a27</td>
+        <td>Electric Piano I</td>
+        <td>Kinda Wurlitzer</td>
+      </tr>
+      <tr>
+        <td>a28</td>
+        <td>Electric Piano II</td>
+        <td>Kinda Rhodes</td>
+      </tr>
+      <tr>
+        <td>a31</td>
+        <td>Clock Chimes</td>
+        <td>Hypnotic Haunting</td>
+      </tr>
+      <tr>
+        <td>a32</td>
+        <td>Steel Drums</td>
+        <td>Calypso</td>
+      </tr>
+      <tr>
+        <td>a33</td>
+        <td>Xylophone</td>
+        <td>Kinda Xylophone</td>
+      </tr>
+      <tr>
+        <td>a34</td>
+        <td>Brass III</td>
+        <td>Pad Brass</td>
+      </tr>
+      <tr>
+        <td>a35</td>
+        <td>Fanfare</td>
+        <td>Analog Pad</td>
+      </tr>
+      <tr>
+        <td>a36</td>
+        <td>String III</td>
+        <td>Classic Juno Strings</td>
+      </tr>
+      <tr>
+        <td>a37</td>
+        <td>Pizzicato</td>
+        <td>Plucked String</td>
+      </tr>
+      <tr>
+        <td>a38</td>
+        <td>High Strings</td>
+        <td>Realistic Strings</td>
+      </tr>
+      <tr>
+        <td>a41</td>
+        <td>Brass Clarinet</td>
+        <td>Children's Reading Show</td>
+      </tr>
+      <tr>
+        <td>a42</td>
+        <td>English Horn</td>
+        <td>Nasal Horn</td>
+      </tr>
+      <tr>
+        <td>a43</td>
+        <td>Brass Ensemble</td>
+        <td>Mellow</td>
+      </tr>
+      <tr>
+        <td>a44</td>
+        <td>Guitar</td>
+        <td>Kinda Guitar</td>
+      </tr>
+      <tr>
+        <td>a45</td>
+        <td>Koto</td>
+        <td>Japanese Instrument</td>
+      </tr>
+      <tr>
+        <td>a46</td>
+        <td>Dark Pluck</td>
+        <td>Haunting Pluck</td>
+      </tr>
+      <tr>
+        <td>a47</td>
+        <td>Funky I</td>
+        <td>Good Bass Sound</td>
+      </tr>
+      <tr>
+        <td>a48</td>
+        <td>Synth Bass I</td>
+        <td>80's Bass Sound</td>
+      </tr>
+      <tr>
+        <td>a51</td>
+        <td>Lead I</td>
+        <td>Kinda Moog Lead</td>
+      </tr>
+      <tr>
+        <td>a52</td>
+        <td>Lead II</td>
+        <td>Variation on Lead I Brassier</td>
+      </tr>
+      <tr>
+        <td>a53</td>
+        <td>Lead III</td>
+        <td>Variation on Lead I w/Port</td>
+      </tr>
+      <tr>
+        <td>a54</td>
+        <td>Funky II</td>
+        <td>Funky Bass</td>
+      </tr>
+      <tr>
+        <td>a55</td>
+        <td>Synth Bass</td>
+        <td>Fat Bass</td>
+      </tr>
+      <tr>
+        <td>a56</td>
+        <td>Funky III</td>
+        <td>Techno Bass</td>
+      </tr>
+      <tr>
+        <td>a57</td>
+        <td>Thud Wah</td>
+        <td>Synth Effect</td>
+      </tr>
+      <tr>
+        <td>a58</td>
+        <td>Giong Up</td>
+        <td>Sci-Fi Synth Effect</td>
+      </tr>
+      <tr>
+        <td>a61</td>
+        <td>Piano II</td>
+        <td>Brighter Variation on Piano I</td>
+      </tr>
+      <tr>
+        <td>a62</td>
+        <td>Clav</td>
+        <td>Honer Clavinet</td>
+      </tr>
+      <tr>
+        <td>a63</td>
+        <td>Frontier Organ</td>
+        <td>Kinda Farfisa</td>
+      </tr>
+      <tr>
+        <td>a64</td>
+        <td>Snare</td>
+        <td>Kinda Joy Division Decades</td>
+      </tr>
+      <tr>
+        <td>a65</td>
+        <td>Tom Toms</td>
+        <td>Simmons Toms</td>
+      </tr>
+      <tr>
+        <td>a66</td>
+        <td>Timpani</td>
+        <td>Powerful Timpani</td>
+      </tr>
+      <tr>
+        <td>a67</td>
+        <td>Shaker</td>
+        <td>Shaker</td>
+      </tr>
+      <tr>
+        <td>a68</td>
+        <td>Synth Pad</td>
+        <td>Big Pad</td>
+      </tr>
+      <tr>
+        <td>a71</td>
+        <td>Sweep I</td>
+        <td>Resonating Sweep</td>
+      </tr>
+      <tr>
+        <td>a72</td>
+        <td>Pluck Sweep</td>
+        <td>Short Dark 80's Synth</td>
+      </tr>
+      <tr>
+        <td>a73</td>
+        <td>Repeater</td>
+        <td>Envelope Shaping</td>
+      </tr>
+      <tr>
+        <td>a74</td>
+        <td>Sweep II</td>
+        <td>Big Powerful Sound</td>
+      </tr>
+      <tr>
+        <td>a75</td>
+        <td>Pluck Bell</td>
+        <td>Short Synth Sound</td>
+      </tr>
+      <tr>
+        <td>a76</td>
+        <td>Dark Synth Piano</td>
+        <td>80's Dark Synth</td>
+      </tr>
+      <tr>
+        <td>a77</td>
+        <td>Sustainer</td>
+        <td>Analog Synth</td>
+      </tr>
+      <tr>
+        <td>a78</td>
+        <td>Wah Release</td>
+        <td>Funny Sound</td>
+      </tr>
+      <tr>
+        <td>a81</td>
+        <td>Gong</td>
+        <td>Kinda Gong</td>
+      </tr>
+      <tr>
+        <td>a82</td>
+        <td>Resonance Funk</td>
+        <td>Kinda 808/909 Kick Drum</td>
+      </tr>
+      <tr>
+        <td>a83</td>
+        <td>Drum Booms</td>
+        <td>Boomy Drum Sound</td>
+      </tr>
+      <tr>
+        <td>a84</td>
+        <td>Dust Storm</td>
+        <td>Wind Effect</td>
+      </tr>
+      <tr>
+        <td>a85</td>
+        <td>Rocket Men</td>
+        <td>Wind Effect</td>
+      </tr>
+      <tr>
+        <td>a86</td>
+        <td>Hand Claps</td>
+        <td>Kinda 808/909 Claps</td>
+      </tr>
+      <tr>
+        <td>a87</td>
+        <td>FX Sweep</td>
+        <td>Sci-Fi Effect</td>
+      </tr>
+      <tr>
+        <td>a88</td>
+        <td>Caverns</td>
+        <td>Drips In Cavern Effect</td>
+      </tr>
+      <tr>
+        <td>b11</td>
+        <td>Strings</td>
+        <td>Dreamy Synth Strings</td>
+      </tr>
+      <tr>
+        <td>b12</td>
+        <td>Violin</td>
+        <td>Violin with Vibrato</td>
+      </tr>
+      <tr>
+        <td>b13</td>
+        <td>Chorus Vibes</td>
+        <td>Nice Synth</td>
+      </tr>
+      <tr>
+        <td>b14</td>
+        <td>Organ I</td>
+        <td>Kinda Hammond</td>
+      </tr>
+      <tr>
+        <td>b15</td>
+        <td>Harpsicord I</td>
+        <td>Classical Harpsichord</td>
+      </tr>
+      <tr>
+        <td>b16</td>
+        <td>Recorder</td>
+        <td>Simple Recorder Sound</td>
+      </tr>
+      <tr>
+        <td>b17</td>
+        <td>Percussive Pluck</td>
+        <td>80's Short Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b18</td>
+        <td>Noise Sweep</td>
+        <td>Noise-Based Synth Sweep</td>
+      </tr>
+      <tr>
+        <td>b21</td>
+        <td>Space Chimes</td>
+        <td>Interesting Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b22</td>
+        <td>Nylon Guitar</td>
+        <td>Bright Guitar Sound</td>
+      </tr>
+      <tr>
+        <td>b23</td>
+        <td>Orchestral Pad</td>
+        <td>Full Orchestra Synth</td>
+      </tr>
+      <tr>
+        <td>b24</td>
+        <td>Bright Pluck</td>
+        <td>Analog Pluck Sound</td>
+      </tr>
+      <tr>
+        <td>b25</td>
+        <td>Organ Bell</td>
+        <td>Organ Variation</td>
+      </tr>
+      <tr>
+        <td>b26</td>
+        <td>Accordian</td>
+        <td>Accordian Sound</td>
+      </tr>
+      <tr>
+        <td>b27</td>
+        <td>FX Rise I</td>
+        <td>Sci-Fi Synth Effect</td>
+      </tr>
+      <tr>
+        <td>b28</td>
+        <td>FX Rise II</td>
+        <td>Sci-Fi Synth Effect</td>
+      </tr>
+      <tr>
+        <td>b31</td>
+        <td>Brass</td>
+        <td>Brass Sound</td>
+      </tr>
+      <tr>
+        <td>b32</td>
+        <td>Helicopter</td>
+        <td>Kinda Helicopter</td>
+      </tr>
+      <tr>
+        <td>b33</td>
+        <td>Lute</td>
+        <td>Medevil Lute Sound</td>
+      </tr>
+      <tr>
+        <td>b34</td>
+        <td>Chorus Funk</td>
+        <td>Analog Bass</td>
+      </tr>
+      <tr>
+        <td>b35</td>
+        <td>Tomita</td>
+        <td>Tomita Sounds</td>
+      </tr>
+      <tr>
+        <td>b36</td>
+        <td>FX Sweep I</td>
+        <td>Dentist Drill</td>
+      </tr>
+      <tr>
+        <td>b37</td>
+        <td>Sharp Reed</td>
+        <td>Happy Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b38</td>
+        <td>Bass Pluck</td>
+        <td>Plucked Bass Sound</td>
+      </tr>
+      <tr>
+        <td>b41</td>
+        <td>Resonant Rise</td>
+        <td>Sweep Synth</td>
+      </tr>
+      <tr>
+        <td>b42</td>
+        <td>Harpsichord II</td>
+        <td>Variation On Harpsichord I</td>
+      </tr>
+      <tr>
+        <td>b43</td>
+        <td>Dark Ensemble</td>
+        <td>Dark Haunting Pad</td>
+      </tr>
+      <tr>
+        <td>b44</td>
+        <td>Contact Wah</td>
+        <td>Funky Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b45</td>
+        <td>Noise Sweep 2</td>
+        <td>Clean Effect Sound</td>
+      </tr>
+      <tr>
+        <td>b46</td>
+        <td>Glassy Wah</td>
+        <td>Kinda Wendy Carlos</td>
+      </tr>
+      <tr>
+        <td>b47</td>
+        <td>Phase Ensemble</td>
+        <td>Phased Strings</td>
+      </tr>
+      <tr>
+        <td>b48</td>
+        <td>Chorused Bell</td>
+        <td>Bell Sound with Chorus</td>
+      </tr>
+      <tr>
+        <td>b51</td>
+        <td>Clav</td>
+        <td>Kinda Clavinet</td>
+      </tr>
+      <tr>
+        <td>b52</td>
+        <td>Organ II</td>
+        <td>Kinda Hammond II</td>
+      </tr>
+      <tr>
+        <td>b53</td>
+        <td>Bassoon</td>
+        <td>Bassoon Sound</td>
+      </tr>
+      <tr>
+        <td>b54</td>
+        <td>Auto Release Noise Sweep</td>
+        <td>Standard Synth Effect</td>
+      </tr>
+      <tr>
+        <td>b55</td>
+        <td>Brass Ensemble</td>
+        <td>80's Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b56</td>
+        <td>Ethereal</td>
+        <td>Haunting Synth Pad</td>
+      </tr>
+      <tr>
+        <td>b57</td>
+        <td>Chorus Bell II</td>
+        <td>Movie Soundtrack Pad</td>
+      </tr>
+      <tr>
+        <td>b58</td>
+        <td>Blizzard</td>
+        <td>Sci-Fi Synth Effect</td>
+      </tr>
+      <tr>
+        <td>b61</td>
+        <td>E. Piano w/Tremelo</td>
+        <td>Tremelo Piano</td>
+      </tr>
+      <tr>
+        <td>b62</td>
+        <td>Clarinet</td>
+        <td>Kinda Clarinet</td>
+      </tr>
+      <tr>
+        <td>b63</td>
+        <td>Thunder</td>
+        <td>Sci-Fi Synth Effect</td>
+      </tr>
+      <tr>
+        <td>b64</td>
+        <td>Reedy Organ</td>
+        <td>Circus Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b65</td>
+        <td>Flute - Horn</td>
+        <td>Warm Analog Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b66</td>
+        <td>Toy Rhodes</td>
+        <td>Kinda Toy/Kinda Rhodes</td>
+      </tr>
+      <tr>
+        <td>b67</td>
+        <td>Surf's Up</td>
+        <td>Sci-Fi Synth Effect</td>
+      </tr>
+      <tr>
+        <td>b68</td>
+        <td>OW Bass</td>
+        <td>Kinda Odyssey Bass</td>
+      </tr>
+      <tr>
+        <td>b71</td>
+        <td>Piccolo</td>
+        <td>Plucked String Sound</td>
+      </tr>
+      <tr>
+        <td>b72</td>
+        <td>Melodic Taps</td>
+        <td>Sci-Fi Synth Effect</td>
+      </tr>
+      <tr>
+        <td>b73</td>
+        <td>Meow Bass</td>
+        <td>70's Poly Synth</td>
+      </tr>
+      <tr>
+        <td>b74</td>
+        <td>Violin (High)</td>
+        <td>High-Pitched Violin Sound</td>
+      </tr>
+      <tr>
+        <td>b75</td>
+        <td>High Bells</td>
+        <td>High-Pitched Bell Sound</td>
+      </tr>
+      <tr>
+        <td>b76</td>
+        <td>Rolling Wah</td>
+        <td>LFO Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b77</td>
+        <td>Ping Bell</td>
+        <td>Organ/Bell Sound</td>
+      </tr>
+      <tr>
+        <td>b78</td>
+        <td>Brassy Organ</td>
+        <td>Ensemble Synth Sound</td>
+      </tr>
+      <tr>
+        <td>b81</td>
+        <td>Low Dark Strings</td>
+        <td>Analog Dark Strings</td>
+      </tr>
+      <tr>
+        <td>b82</td>
+        <td>Piccolo Trumpet</td>
+        <td>Piccolo/Trumpet Sound</td>
+      </tr>
+      <tr>
+        <td>b83</td>
+        <td>Cello</td>
+        <td>Classic Cello Sound</td>
+      </tr>
+      <tr>
+        <td>b84</td>
+        <td>High Strings</td>
+        <td>High-Pitched String Sound</td>
+      </tr>
+      <tr>
+        <td>b85</td>
+        <td>Rocket Men</td>
+        <td>Sci-Fi Sound Effect</td>
+      </tr>
+      <tr>
+        <td>b86</td>
+        <td>Forbidden Planet</td>
+        <td>Kinda 808/909 Claps</td>
+      </tr>
+      <tr>
+        <td>b87</td>
+        <td>Froggy</td>
+        <td>Sci-Fi Sound Effect</td>
+      </tr>
+      <tr>
+        <td>b88</td>
+        <td>Owgan</td>
+        <td>Techno Synth</td>
+      </tr>
+    </table>
+  </main>
+</body>
+</html>
